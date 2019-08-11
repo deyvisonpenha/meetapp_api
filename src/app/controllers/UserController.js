@@ -65,7 +65,7 @@ class UserController {
       return res.status(401).json({ error: 'Password does not match.' });
     }
 
-    if (oldPassword === password) {
+    if (oldPassword && oldPassword === password) {
       return res
         .status(401)
         .json({ error: 'Password does not iqual to the last password.' });
